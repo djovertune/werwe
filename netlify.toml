@@ -1,0 +1,30 @@
+# ALLai site configuration
+
+[build]
+  publish = "."
+
+# Send the apex to www (Netlify recommends www as primary with external DNS)
+# Uncomment if you set www.allsai.net as your primary domain:
+# [[redirects]]
+#   from = "https://allsai.net/*"
+#   to = "https://www.allsai.net/:splat"
+#   status = 301
+#   force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

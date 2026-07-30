@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALLai — your phone, answered. Every time.</title>
+<meta name="description" content="An AI receptionist that answers your business phone 24/7 and books appointments straight into your calendar. Set up for you, end to end. Ring it and hear for yourself.">
+<meta property="og:title" content="ALLai — your phone, answered. Every time.">
+<meta property="og:description" content="An AI receptionist that answers 24/7 and books jobs into your calendar. Ring it and try to catch it out.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://allsai.net/">
+<meta property="og:image" content="https://allsai.net/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://allsai.net/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0B1A28">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B1A28;         /* deepest navy - the night */
+  --ink-2:#12293D;       /* raised surfaces */
+  --slate:#3A5A73;       /* muted structural */
+  --amber:#F0932B;       /* the answer */
+  --signal:#FFC46B;      /* lit accent */
+  --cream:#FBF8F4;       /* light sections */
+  --paper:#FFFFFF;
+  --text-dim:#9FB3C4;
+
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --body:'Work Sans',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+
+  --wrap:1120px;
+  --gut:clamp(20px,5vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--cream);
+  font-family:var(--body);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:3px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(11,26,40,.86);
+  backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;
+  padding-block:16px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);
+  font-weight:700;font-size:23px;letter-spacing:-.02em}
+.brand .ai{color:var(--amber)}
+.nav-cta{font-family:var(--mono);font-size:15px;text-decoration:none;
+  border:1.5px solid var(--amber);color:var(--signal);padding:9px 16px;border-radius:100px;
+  white-space:nowrap;transition:background .18s,color .18s}
+.nav-cta:hover{background:var(--amber);color:var(--ink)}
+
+/* ---------- hero: the number IS the hero ---------- */
+.hero{padding-block:clamp(56px,10vw,110px) clamp(48px,8vw,90px);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:auto 0 -40% 0;height:70%;
+  background:radial-gradient(ellipse at 50% 0%,rgba(240,147,43,.13),transparent 65%);
+  pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 22px}
+.hero h1{font-family:var(--display);font-weight:700;
+  font-size:clamp(38px,7.2vw,76px);line-height:1.02;letter-spacing:-.035em;margin:0 0 22px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lede{font-size:clamp(17px,2.2vw,21px);color:var(--text-dim);max-width:52ch;margin:0 0 40px}
+
+/* the dial - signature element */
+.dial{display:inline-flex;flex-direction:column;gap:18px;
+  background:var(--ink-2);border:1px solid rgba(240,147,43,.28);
+  border-radius:20px;padding:26px 30px 24px;position:relative}
+.dial-label{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-dim)}
+.dial-num{font-family:var(--mono);font-weight:700;
+  font-size:clamp(27px,5.2vw,44px);letter-spacing:-.01em;color:var(--cream);
+  text-decoration:none;display:inline-block;transition:color .18s}
+.dial-num:hover{color:var(--signal)}
+.dial-sub{font-size:14.5px;color:var(--text-dim);margin:0}
+
+/* live waveform - the one animated moment */
+.wave{display:flex;align-items:center;gap:5px;height:34px}
+.wave span{width:5px;border-radius:3px;background:var(--amber);height:22%;
+  animation:pulse 1.5s ease-in-out infinite}
+.wave span:nth-child(1){animation-delay:0s}
+.wave span:nth-child(2){animation-delay:.13s}
+.wave span:nth-child(3){animation-delay:.26s}
+.wave span:nth-child(4){animation-delay:.39s}
+.wave span:nth-child(5){animation-delay:.52s}
+.wave span:nth-child(6){animation-delay:.32s}
+.wave span:nth-child(7){animation-delay:.18s}
+.wave span:nth-child(8){animation-delay:.06s}
+@keyframes pulse{0%,100%{height:20%}50%{height:100%}}
+@media (prefers-reduced-motion:reduce){
+  .wave span{animation:none;height:56%}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- the problem ---------- */
+.band{background:var(--cream);color:var(--ink);padding-block:clamp(56px,9vw,96px)}
+.band h2,.dark h2{font-family:var(--display);font-weight:700;
+  font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:-.028em;margin:0 0 20px;max-width:20ch}
+.band p{max-width:60ch;color:#3A4A57}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:28px;margin-top:44px}
+.stat{border-top:3px solid var(--amber);padding-top:18px}
+.stat b{display:block;font-family:var(--display);font-weight:700;
+  font-size:clamp(38px,6vw,58px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.stat span{display:block;margin-top:9px;font-size:15.5px;color:#54646F;max-width:30ch}
+.src{margin-top:30px;font-size:13.5px;color:#7A8892}
+
+/* ---------- how ---------- */
+.dark{padding-block:clamp(56px,9vw,96px)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px;margin-top:46px}
+.step h3{font-family:var(--display);font-size:21px;font-weight:700;margin:16px 0 8px;letter-spacing:-.015em}
+.step p{color:var(--text-dim);font-size:15.5px;margin:0}
+.step-mark{width:38px;height:38px;border-radius:50%;border:2px solid var(--amber);
+  display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--amber)}
+
+/* ---------- verticals ---------- */
+.who{background:var(--ink-2);padding-block:clamp(56px,9vw,96px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2px;margin-top:42px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden}
+.cell{background:var(--ink-2);padding:26px 24px}
+.cell b{display:block;font-family:var(--display);font-size:17.5px;font-weight:700;margin-bottom:7px}
+.cell span{font-size:14.5px;color:var(--text-dim);line-height:1.5}
+
+/* ---------- form ---------- */
+.get{padding-block:clamp(56px,9vw,96px)}
+.get-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:start}
+@media(max-width:860px){.get-inner{grid-template-columns:1fr}}
+form{display:grid;gap:16px}
+label{font-size:14px;font-weight:600;color:var(--cream);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 14px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);
+  color:var(--cream);font-family:var(--body);font-size:16px}
+input::placeholder,textarea::placeholder{color:#6E8497}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),
+  linear-gradient(135deg,var(--amber) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+button{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;
+  background:var(--amber);color:var(--ink);border:0;border-radius:100px;
+  padding:15px 26px;cursor:pointer;transition:background .18s;justify-self:start}
+button:hover{background:var(--signal)}
+.note{font-size:13.5px;color:var(--text-dim);margin:2px 0 0}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid rgba(255,255,255,.08);padding-block:34px;font-size:14.5px;color:var(--text-dim)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer a{color:var(--signal);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="34" height="34" viewBox="0 0 200 200" aria-hidden="true">
+        <path d="M 141.4 58.6 A 58 58 0 1 1 58.6 141.4" fill="none" stroke="#FBF8F4" stroke-width="10.2" stroke-linecap="round"/>
+        <g fill="#F0932B">
+          <rect x="76" y="88" width="11.6" height="24" rx="5.8"/>
+          <rect x="93" y="77" width="11.6" height="46" rx="5.8"/>
+          <rect x="110" y="71" width="11.6" height="58" rx="5.8"/>
+          <rect x="127" y="82" width="11.6" height="36" rx="5.8"/>
+          <rect x="144" y="90" width="11.6" height="20" rx="5.8"/>
+        </g>
+      </svg>
+      <span>ALL<span class="ai">ai</span></span>
+    </a>
+    <a class="nav-cta" href="tel:+440000000000">Ring the demo</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Answered · every call · every hour</p>
+    <h1>Your phone rings. <em>You're busy.</em> They ring someone else.</h1>
+    <p class="lede">ALLai answers your business line around the clock, talks to your customers like a person, and books the job straight into your calendar. Set up for you, end to end — you touch nothing.</p>
+
+    <div class="dial">
+      <p class="dial-label">Don't take my word for it</p>
+      <a class="dial-num" href="tel:+447380327053">7380327053</a>
+      <div class="wave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="dial-sub">Ring it and try to catch it out. Takes thirty seconds.</p>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Missed calls don't feel like anything. That's the problem.</h2>
+    <p>Nobody hands you an invoice for the call you didn't take. You're under a car, chairside, out on a viewing — and by the time you've wiped your hands, they've already rung the next name on Google. The work leaves quietly, and you never find out it was there.</p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <b>47%</b>
+        <span>of first calls to UK small businesses go unanswered</span>
+      </div>
+      <div class="stat">
+        <b>85%</b>
+        <span>of those callers never try again</span>
+      </div>
+      <div class="stat">
+        <b>24/7</b>
+        <span>evenings, weekends and bank holidays, all covered</span>
+      </div>
+    </div>
+    <p class="src">Source: TelePA study of 142 UK SMEs, 2025.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-mark">01</div>
+        <h3>It answers</h3>
+        <p>Picks up within a couple of rings and holds a normal conversation. No menus, no hold music, no press-one-for-sales.</p>
+      </div>
+      <div class="step">
+        <div class="step-mark">02</div>
+        <h3>It books</h3>
+        <p>Checks your live diary, takes the details, answers the usual questions, and puts the appointment straight in.</p>
+      </div>
+      <div class="step">
+        <div class="step-mark">03</div>
+        <h3>You carry on</h3>
+        <p>You finish what you were doing. The booking is sitting there when you next look, with everything you need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <h2>Built for businesses that live on the phone</h2>
+    <div class="grid">
+      <div class="cell"><b>Garages &amp; MOT centres</b><span>Bookings while you're under a car</span></div>
+      <div class="cell"><b>Dental practices</b><span>Never miss a new patient enquiry</span></div>
+      <div class="cell"><b>Estate agents</b><span>Valuations captured while you're on a viewing</span></div>
+      <div class="cell"><b>Veterinary clinics</b><span>Worried owners get a calm answer</span></div>
+      <div class="cell"><b>Physiotherapy</b><span>Appointments booked while you're hands-on</span></div>
+      <div class="cell"><b>Private clinics</b><span>Consultations booked, questions answered</span></div>
+      <div class="cell"><b>Solicitors</b><span>Enquiries taken while you're in a meeting</span></div>
+      <div class="cell"><b>Accountants</b><span>New clients captured in busy season</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="get" id="quote">
+  <div class="wrap get-inner">
+    <div>
+      <h2>Get a quote</h2>
+      <p style="color:var(--text-dim);max-width:46ch">Every setup is different, so the price depends on your business and how many calls you take. Tell me a little and I'll come back with a straight number — usually same day.</p>
+      <p style="color:var(--text-dim);max-width:46ch">Or skip the form and just ring the demo line above. Honestly, that tells you more than I can.</p>
+    </div>
+
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="company-website">
+      <input type="hidden" name="form-name" value="quote">
+      <p hidden><label>Leave this empty: <input name="company-website"></label></p>
+
+      <div>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder="Dave Wilson">
+      </div>
+      <div>
+        <label for="business">Business name</label>
+        <input id="business" name="business" type="text" required placeholder="Oslo Court Garage">
+      </div>
+      <div>
+        <label for="type">What kind of business?</label>
+        <select id="type" name="type" required>
+          <option value="">Choose one…</option>
+          <option>Garage / MOT centre</option>
+          <option>Dental practice</option>
+          <option>Estate agency</option>
+          <option>Veterinary clinic</option>
+          <option>Physiotherapy</option>
+          <option>Private clinic</option>
+          <option>Solicitors</option>
+          <option>Accountants</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div>
+        <label for="phone">Best number to reach you</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="07700 900000">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="dave@oslocourtgarage.co.uk">
+      </div>
+      <div>
+        <label for="msg">Anything I should know? <span style="font-weight:400;color:var(--text-dim)">(optional)</span></label>
+        <textarea id="msg" name="message" rows="3" placeholder="Roughly how many calls a day, opening hours, anything unusual…"></textarea>
+      </div>
+      <button type="submit">Send it over</button>
+      <p class="note">I'll reply personally. No sales sequence, no chasing.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> ALLai · United Kingdom</span>
+    <span><a href="tel:+440000000000">0000 000 0000</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

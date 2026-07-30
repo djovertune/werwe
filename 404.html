@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — ALLai</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B1A28;         /* deepest navy - the night */
+  --ink-2:#12293D;       /* raised surfaces */
+  --slate:#3A5A73;       /* muted structural */
+  --amber:#F0932B;       /* the answer */
+  --signal:#FFC46B;      /* lit accent */
+  --cream:#FBF8F4;       /* light sections */
+  --paper:#FFFFFF;
+  --text-dim:#9FB3C4;
+
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --body:'Work Sans',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+
+  --wrap:1120px;
+  --gut:clamp(20px,5vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--cream);
+  font-family:var(--body);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:3px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(11,26,40,.86);
+  backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;
+  padding-block:16px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);
+  font-weight:700;font-size:23px;letter-spacing:-.02em}
+.brand .ai{color:var(--amber)}
+.nav-cta{font-family:var(--mono);font-size:15px;text-decoration:none;
+  border:1.5px solid var(--amber);color:var(--signal);padding:9px 16px;border-radius:100px;
+  white-space:nowrap;transition:background .18s,color .18s}
+.nav-cta:hover{background:var(--amber);color:var(--ink)}
+
+/* ---------- hero: the number IS the hero ---------- */
+.hero{padding-block:clamp(56px,10vw,110px) clamp(48px,8vw,90px);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:auto 0 -40% 0;height:70%;
+  background:radial-gradient(ellipse at 50% 0%,rgba(240,147,43,.13),transparent 65%);
+  pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 22px}
+.hero h1{font-family:var(--display);font-weight:700;
+  font-size:clamp(38px,7.2vw,76px);line-height:1.02;letter-spacing:-.035em;margin:0 0 22px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lede{font-size:clamp(17px,2.2vw,21px);color:var(--text-dim);max-width:52ch;margin:0 0 40px}
+
+/* the dial - signature element */
+.dial{display:inline-flex;flex-direction:column;gap:18px;
+  background:var(--ink-2);border:1px solid rgba(240,147,43,.28);
+  border-radius:20px;padding:26px 30px 24px;position:relative}
+.dial-label{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-dim)}
+.dial-num{font-family:var(--mono);font-weight:700;
+  font-size:clamp(27px,5.2vw,44px);letter-spacing:-.01em;color:var(--cream);
+  text-decoration:none;display:inline-block;transition:color .18s}
+.dial-num:hover{color:var(--signal)}
+.dial-sub{font-size:14.5px;color:var(--text-dim);margin:0}
+
+/* live waveform - the one animated moment */
+.wave{display:flex;align-items:center;gap:5px;height:34px}
+.wave span{width:5px;border-radius:3px;background:var(--amber);height:22%;
+  animation:pulse 1.5s ease-in-out infinite}
+.wave span:nth-child(1){animation-delay:0s}
+.wave span:nth-child(2){animation-delay:.13s}
+.wave span:nth-child(3){animation-delay:.26s}
+.wave span:nth-child(4){animation-delay:.39s}
+.wave span:nth-child(5){animation-delay:.52s}
+.wave span:nth-child(6){animation-delay:.32s}
+.wave span:nth-child(7){animation-delay:.18s}
+.wave span:nth-child(8){animation-delay:.06s}
+@keyframes pulse{0%,100%{height:20%}50%{height:100%}}
+@media (prefers-reduced-motion:reduce){
+  .wave span{animation:none;height:56%}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- the problem ---------- */
+.band{background:var(--cream);color:var(--ink);padding-block:clamp(56px,9vw,96px)}
+.band h2,.dark h2{font-family:var(--display);font-weight:700;
+  font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:-.028em;margin:0 0 20px;max-width:20ch}
+.band p{max-width:60ch;color:#3A4A57}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:28px;margin-top:44px}
+.stat{border-top:3px solid var(--amber);padding-top:18px}
+.stat b{display:block;font-family:var(--display);font-weight:700;
+  font-size:clamp(38px,6vw,58px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.stat span{display:block;margin-top:9px;font-size:15.5px;color:#54646F;max-width:30ch}
+.src{margin-top:30px;font-size:13.5px;color:#7A8892}
+
+/* ---------- how ---------- */
+.dark{padding-block:clamp(56px,9vw,96px)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px;margin-top:46px}
+.step h3{font-family:var(--display);font-size:21px;font-weight:700;margin:16px 0 8px;letter-spacing:-.015em}
+.step p{color:var(--text-dim);font-size:15.5px;margin:0}
+.step-mark{width:38px;height:38px;border-radius:50%;border:2px solid var(--amber);
+  display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--amber)}
+
+/* ---------- verticals ---------- */
+.who{background:var(--ink-2);padding-block:clamp(56px,9vw,96px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2px;margin-top:42px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden}
+.cell{background:var(--ink-2);padding:26px 24px}
+.cell b{display:block;font-family:var(--display);font-size:17.5px;font-weight:700;margin-bottom:7px}
+.cell span{font-size:14.5px;color:var(--text-dim);line-height:1.5}
+
+/* ---------- form ---------- */
+.get{padding-block:clamp(56px,9vw,96px)}
+.get-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:start}
+@media(max-width:860px){.get-inner{grid-template-columns:1fr}}
+form{display:grid;gap:16px}
+label{font-size:14px;font-weight:600;color:var(--cream);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 14px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);
+  color:var(--cream);font-family:var(--body);font-size:16px}
+input::placeholder,textarea::placeholder{color:#6E8497}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),
+  linear-gradient(135deg,var(--amber) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+button{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;
+  background:var(--amber);color:var(--ink);border:0;border-radius:100px;
+  padding:15px 26px;cursor:pointer;transition:background .18s;justify-self:start}
+button:hover{background:var(--signal)}
+.note{font-size:13.5px;color:var(--text-dim);margin:2px 0 0}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid rgba(255,255,255,.08);padding-block:34px;font-size:14.5px;color:var(--text-dim)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer a{color:var(--signal);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+<style>
+.lost{min-height:72vh;display:grid;place-items:center;text-align:center;padding-block:80px}
+.lost h1{font-family:var(--display);font-size:clamp(38px,7vw,70px);letter-spacing:-.035em;margin:0 0 16px}
+.lost p{color:var(--text-dim);max-width:44ch;margin:0 auto 32px}
+.back{font-family:var(--display);font-weight:700;font-size:17px;background:var(--amber);color:var(--ink);
+  text-decoration:none;padding:14px 26px;border-radius:100px;display:inline-block}
+.back:hover{background:var(--signal)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">
+    <svg width="34" height="34" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M 141.4 58.6 A 58 58 0 1 1 58.6 141.4" fill="none" stroke="#FBF8F4" stroke-width="10.2" stroke-linecap="round"/>
+      <g fill="#F0932B">
+        <rect x="76" y="88" width="11.6" height="24" rx="5.8"/><rect x="93" y="77" width="11.6" height="46" rx="5.8"/>
+        <rect x="110" y="71" width="11.6" height="58" rx="5.8"/><rect x="127" y="82" width="11.6" height="36" rx="5.8"/>
+        <rect x="144" y="90" width="11.6" height="20" rx="5.8"/>
+      </g>
+    </svg>
+    <span>ALL<span class="ai">ai</span></span>
+  </a>
+  <a class="nav-cta" href="tel:+440000000000">Ring the demo</a>
+</div></nav>
+
+<main class="lost"><div class="wrap">
+  <div class="wave" style="justify-content:center;margin-bottom:28px" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <h1>Nothing here.</h1>
+  <p>That page doesn't exist — but the phone still gets answered. Head back, or just ring the demo and hear it for yourself.</p>
+  <a class="back" href="/">Back to the start</a>
+</div></main>
+
+<footer><div class="wrap">
+  <span>© <span id="yr">2026</span> ALLai · United Kingdom</span>
+  <span><a href="tel:+440000000000">0000 000 0000</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
