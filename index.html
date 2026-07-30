@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ALLai — your phone, answered. Every time.</title>
-<meta name="description" content="An AI receptionist that answers your business phone 24/7 and books appointments straight into your calendar. Set up for you, end to end. Ring it and hear for yourself.">
-<meta property="og:title" content="ALLai — your phone, answered. Every time.">
+<title>ALLai — your phone, answered. Every call, every hour.</title>
+<meta name="description" content="An AI receptionist that answers your business phone 24/7, talks like a person, and books appointments straight into your calendar. Set up for you end to end. Ring it and hear for yourself.">
+<link rel="canonical" href="https://allsai.net/">
+<meta property="og:title" content="ALLai — your phone, answered. Every call, every hour.">
 <meta property="og:description" content="An AI receptionist that answers 24/7 and books jobs into your calendar. Ring it and try to catch it out.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://allsai.net/">
@@ -13,315 +14,404 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://allsai.net/">
+<meta name="theme-color" content="#0B1A28">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#0B1A28">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"ALLai",
+"description":"An AI receptionist that answers business phone lines 24/7 and books appointments straight into the calendar.",
+"url":"https://allsai.net/","telephone":"+447380327053","email":"filip.lubas@allsai.net",
+"areaServed":{"@type":"Country","name":"United Kingdom"},"priceRange":"££",
+"logo":"https://allsai.net/og-image.png","image":"https://allsai.net/og-image.png",
+"founder":{"@type":"Person","name":"Filip Lubas"},
+"serviceType":["AI receptionist","Call answering service","Appointment booking"],
+"knowsAbout":["Garages","MOT centres","Dental practices","Estate agents","Veterinary clinics","Physiotherapy","Private clinics","Solicitors","Accountants"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Will my customers know it's not a person?","acceptedAnswer":{"@type":"Answer","text":"Most don't notice, and the ones who do usually don't mind because they got an answer. It never pretends to be human if asked outright."}},
+{"@type":"Question","name":"Do I have to change my phone number?","acceptedAnswer":{"@type":"Answer","text":"No. You keep your number and forward it, either always or only when you're busy or don't pick up."}},
+{"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"A day or two, and it's all done for you: your services, prices, opening hours and calendar."}},
+{"@type":"Question","name":"What if I want to stop?","acceptedAnswer":{"@type":"Answer","text":"Forward your number back to yourself and it's over. No tie-in and no exit fee."}}]}
+</script>
 <style>
 :root{
-  --ink:#0B1A28;         /* deepest navy - the night */
-  --ink-2:#12293D;       /* raised surfaces */
-  --slate:#3A5A73;       /* muted structural */
-  --amber:#F0932B;       /* the answer */
-  --signal:#FFC46B;      /* lit accent */
-  --cream:#FBF8F4;       /* light sections */
-  --paper:#FFFFFF;
-  --text-dim:#9FB3C4;
-
-  --display:'Space Grotesk',system-ui,sans-serif;
-  --body:'Work Sans',system-ui,sans-serif;
+  --ink:#08151F; --ink-2:#0E2436; --ink-3:#15334A; --line:rgba(255,255,255,.09);
+  --amber:#F0932B; --signal:#FFC46B; --amber-dim:rgba(240,147,43,.14);
+  --cream:#FBF8F4; --dim:#9DB2C4; --dim-2:#6D8598;
+  --display:'Space Grotesk',system-ui,sans-serif; --body:'Work Sans',system-ui,sans-serif;
   --mono:'Space Mono',ui-monospace,monospace;
-
-  --wrap:1120px;
-  --gut:clamp(20px,5vw,56px);
+  --wrap:1140px; --gut:clamp(20px,5vw,52px); --r:16px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--ink);color:var(--cream);
-  font-family:var(--body);font-size:17px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--body);font-size:17px;
+  line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:3px}
-
-/* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:50;background:rgba(11,26,40,.86);
-  backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;
-  padding-block:16px;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);
-  font-weight:700;font-size:23px;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;line-height:1.08;margin:0}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:4px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:0 0 18px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:16.5px;
+  text-decoration:none;padding:15px 26px;border-radius:100px;border:0;cursor:pointer;
+  transition:transform .16s ease,background .16s,box-shadow .16s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--amber);color:var(--ink);box-shadow:0 8px 28px rgba(240,147,43,.22)}
+.btn-primary:hover{background:var(--signal);box-shadow:0 12px 34px rgba(240,147,43,.3)}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--signal)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(8,21,31,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:14px;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:22px}
 .brand .ai{color:var(--amber)}
-.nav-cta{font-family:var(--mono);font-size:15px;text-decoration:none;
-  border:1.5px solid var(--amber);color:var(--signal);padding:9px 16px;border-radius:100px;
-  white-space:nowrap;transition:background .18s,color .18s}
-.nav-cta:hover{background:var(--amber);color:var(--ink)}
-
-/* ---------- hero: the number IS the hero ---------- */
-.hero{padding-block:clamp(56px,10vw,110px) clamp(48px,8vw,90px);position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:auto 0 -40% 0;height:70%;
-  background:radial-gradient(ellipse at 50% 0%,rgba(240,147,43,.13),transparent 65%);
-  pointer-events:none}
-.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--amber);margin:0 0 22px}
-.hero h1{font-family:var(--display);font-weight:700;
-  font-size:clamp(38px,7.2vw,76px);line-height:1.02;letter-spacing:-.035em;margin:0 0 22px;max-width:16ch}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-link{display:none;text-decoration:none;font-size:15.5px;color:var(--dim)}
+.nav-link:hover{color:var(--cream)}
+@media(min-width:900px){.nav-link{display:inline}}
+.nav-call{font-family:var(--mono);font-size:14.5px;text-decoration:none;border:1.5px solid var(--amber);
+  color:var(--signal);padding:9px 16px;border-radius:100px;white-space:nowrap;transition:.16s}
+.nav-call:hover{background:var(--amber);color:var(--ink)}
+.hero{position:relative;padding-block:clamp(52px,9vw,104px) clamp(44px,7vw,84px);overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:min(1000px,120vw);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,147,43,.11),transparent 62%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,64px);align-items:center;position:relative}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(37px,6.4vw,68px);margin-bottom:20px;max-width:15ch}
 .hero h1 em{font-style:normal;color:var(--amber)}
-.hero .lede{font-size:clamp(17px,2.2vw,21px);color:var(--text-dim);max-width:52ch;margin:0 0 40px}
-
-/* the dial - signature element */
-.dial{display:inline-flex;flex-direction:column;gap:18px;
-  background:var(--ink-2);border:1px solid rgba(240,147,43,.28);
-  border-radius:20px;padding:26px 30px 24px;position:relative}
-.dial-label{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--text-dim)}
-.dial-num{font-family:var(--mono);font-weight:700;
-  font-size:clamp(27px,5.2vw,44px);letter-spacing:-.01em;color:var(--cream);
-  text-decoration:none;display:inline-block;transition:color .18s}
-.dial-num:hover{color:var(--signal)}
-.dial-sub{font-size:14.5px;color:var(--text-dim);margin:0}
-
-/* live waveform - the one animated moment */
-.wave{display:flex;align-items:center;gap:5px;height:34px}
-.wave span{width:5px;border-radius:3px;background:var(--amber);height:22%;
-  animation:pulse 1.5s ease-in-out infinite}
-.wave span:nth-child(1){animation-delay:0s}
-.wave span:nth-child(2){animation-delay:.13s}
-.wave span:nth-child(3){animation-delay:.26s}
-.wave span:nth-child(4){animation-delay:.39s}
-.wave span:nth-child(5){animation-delay:.52s}
-.wave span:nth-child(6){animation-delay:.32s}
-.wave span:nth-child(7){animation-delay:.18s}
-.wave span:nth-child(8){animation-delay:.06s}
-@keyframes pulse{0%,100%{height:20%}50%{height:100%}}
-@media (prefers-reduced-motion:reduce){
-  .wave span{animation:none;height:56%}
-  html{scroll-behavior:auto}
-}
-
-/* ---------- the problem ---------- */
-.band{background:var(--cream);color:var(--ink);padding-block:clamp(56px,9vw,96px)}
-.band h2,.dark h2{font-family:var(--display);font-weight:700;
-  font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:-.028em;margin:0 0 20px;max-width:20ch}
-.band p{max-width:60ch;color:#3A4A57}
-.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:28px;margin-top:44px}
-.stat{border-top:3px solid var(--amber);padding-top:18px}
-.stat b{display:block;font-family:var(--display);font-weight:700;
-  font-size:clamp(38px,6vw,58px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
-.stat span{display:block;margin-top:9px;font-size:15.5px;color:#54646F;max-width:30ch}
-.src{margin-top:30px;font-size:13.5px;color:#7A8892}
-
-/* ---------- how ---------- */
-.dark{padding-block:clamp(56px,9vw,96px)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px;margin-top:46px}
-.step h3{font-family:var(--display);font-size:21px;font-weight:700;margin:16px 0 8px;letter-spacing:-.015em}
-.step p{color:var(--text-dim);font-size:15.5px;margin:0}
-.step-mark{width:38px;height:38px;border-radius:50%;border:2px solid var(--amber);
-  display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--amber)}
-
-/* ---------- verticals ---------- */
-.who{background:var(--ink-2);padding-block:clamp(56px,9vw,96px)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:2px;margin-top:42px;background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden}
-.cell{background:var(--ink-2);padding:26px 24px}
-.cell b{display:block;font-family:var(--display);font-size:17.5px;font-weight:700;margin-bottom:7px}
-.cell span{font-size:14.5px;color:var(--text-dim);line-height:1.5}
-
-/* ---------- form ---------- */
-.get{padding-block:clamp(56px,9vw,96px)}
-.get-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:start}
-@media(max-width:860px){.get-inner{grid-template-columns:1fr}}
-form{display:grid;gap:16px}
-label{font-size:14px;font-weight:600;color:var(--cream);display:block;margin-bottom:6px}
-input,select,textarea{width:100%;padding:13px 14px;border-radius:10px;
-  border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);
-  color:var(--cream);font-family:var(--body);font-size:16px}
-input::placeholder,textarea::placeholder{color:#6E8497}
-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),
-  linear-gradient(135deg,var(--amber) 50%,transparent 50%);
-  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
-  background-size:6px 6px,6px 6px;background-repeat:no-repeat}
-button{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;
-  background:var(--amber);color:var(--ink);border:0;border-radius:100px;
-  padding:15px 26px;cursor:pointer;transition:background .18s;justify-self:start}
-button:hover{background:var(--signal)}
-.note{font-size:13.5px;color:var(--text-dim);margin:2px 0 0}
-
-/* ---------- footer ---------- */
-footer{border-top:1px solid rgba(255,255,255,.08);padding-block:34px;font-size:14.5px;color:var(--text-dim)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.hero .lede{font-size:clamp(16.5px,2vw,20px);color:var(--dim);max-width:50ch;margin:0 0 32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cta-note{font-size:14px;color:var(--dim-2);margin:16px 0 0}
+.phone-card{background:linear-gradient(160deg,var(--ink-2),var(--ink-3));border:1px solid rgba(240,147,43,.24);
+  border-radius:22px;padding:28px;position:relative;overflow:hidden}
+.phone-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(240,147,43,.12),transparent 55%);pointer-events:none}
+.pc-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim-2);margin:0 0 14px}
+.pc-num{font-family:var(--mono);font-weight:700;font-size:clamp(24px,3.4vw,32px);color:var(--cream);
+  text-decoration:none;display:block;margin-bottom:16px;transition:color .16s}
+.pc-num:hover{color:var(--signal)}
+.wave{display:flex;align-items:center;gap:4px;height:30px;margin-bottom:18px}
+.wave span{width:4px;border-radius:3px;background:var(--amber);height:20%;animation:pulse 1.5s ease-in-out infinite}
+.wave span:nth-child(1){animation-delay:0s}.wave span:nth-child(2){animation-delay:.12s}
+.wave span:nth-child(3){animation-delay:.24s}.wave span:nth-child(4){animation-delay:.36s}
+.wave span:nth-child(5){animation-delay:.48s}.wave span:nth-child(6){animation-delay:.3s}
+.wave span:nth-child(7){animation-delay:.16s}.wave span:nth-child(8){animation-delay:.05s}
+@keyframes pulse{0%,100%{height:18%}50%{height:100%}}
+.copy-btn{background:none;border:1px solid var(--line);color:var(--dim);font-family:var(--body);
+  font-size:13.5px;padding:8px 14px;border-radius:100px;cursor:pointer;transition:.16s}
+.copy-btn:hover{border-color:var(--amber);color:var(--signal)}
+section{padding-block:clamp(54px,8vw,96px)}
+.band{background:var(--cream);color:#12222E}
+.band h2{font-size:clamp(27px,4.2vw,42px);margin-bottom:18px;max-width:19ch}
+.band p{max-width:58ch;color:#42525E}
+h2{font-size:clamp(27px,4.2vw,42px);margin-bottom:18px;max-width:20ch}
+.sub{color:var(--dim);max-width:56ch;margin:0 0 40px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px;margin-top:42px}
+.stat{border-top:3px solid var(--amber);padding-top:16px}
+.stat b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(36px,5.4vw,54px);line-height:1;color:#12222E}
+.stat span{display:block;margin-top:8px;font-size:15px;color:#5B6B77;max-width:28ch}
+.src{margin-top:26px;font-size:13px;color:#8494A0}
+.demo{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.tab{font-family:var(--body);font-size:14.5px;font-weight:500;padding:9px 16px;border-radius:100px;
+  background:transparent;border:1px solid var(--line);color:var(--dim);cursor:pointer;transition:.16s}
+.tab:hover{border-color:var(--amber);color:var(--cream)}
+.tab[aria-selected="true"]{background:var(--amber);border-color:var(--amber);color:var(--ink);font-weight:600}
+.convo{background:var(--ink);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(18px,3vw,28px);min-height:330px}
+.convo-head{display:flex;align-items:center;gap:10px;padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.dot{width:9px;height:9px;border-radius:50%;background:#3FBF6A;box-shadow:0 0 0 4px rgba(63,191,106,.14)}
+.convo-head span{font-family:var(--mono);font-size:12.5px;color:var(--dim-2);letter-spacing:.06em}
+.msg{display:flex;gap:12px;margin-bottom:16px;opacity:0;transform:translateY(8px);animation:rise .4s ease forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.who{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--mono);font-size:11.5px;font-weight:700}
+.who.a{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(240,147,43,.3)}
+.who.c{background:rgba(255,255,255,.06);color:var(--dim);border:1px solid var(--line)}
+.bubble{font-size:15.6px;line-height:1.55;padding-top:5px;max-width:60ch}
+.msg.alex .bubble{color:var(--cream)}
+.msg.cust .bubble{color:var(--dim)}
+.replay{margin-top:22px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;margin-top:44px}
+.step h3{font-size:20px;margin:14px 0 8px}
+.step p{color:var(--dim);font-size:15.4px;margin:0}
+.smark{width:36px;height:36px;border-radius:50%;border:2px solid var(--amber);display:grid;place-items:center;
+  font-family:var(--mono);font-size:13px;color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(198px,1fr));gap:1px;margin-top:40px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cell{background:var(--ink);padding:24px 22px;transition:background .18s}
+.cell:hover{background:var(--ink-2)}
+.cell b{display:block;font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:6px}
+.cell span{font-size:14.3px;color:var(--dim);line-height:1.5}
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-family:var(--display);font-weight:600;
+  font-size:18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-family:var(--mono);color:var(--amber);font-size:22px;flex:0 0 auto;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 20px;color:var(--dim);max-width:64ch}
+.get-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,68px);align-items:start}
+@media(max-width:880px){.get-inner{grid-template-columns:1fr}}
+form{display:grid;gap:15px}
+label{font-size:14px;font-weight:600;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line);
+  background:rgba(255,255,255,.04);color:var(--cream);font-family:var(--body);font-size:16px}
+input:focus,select:focus,textarea:focus{border-color:var(--amber);outline:none}
+input::placeholder,textarea::placeholder{color:#5C7488}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;background-size:6px 6px;background-repeat:no-repeat}
+.note{font-size:13.4px;color:var(--dim-2);margin:2px 0 0}
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:14.4px;color:var(--dim-2)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
 footer a{color:var(--signal);text-decoration:none}
 footer a:hover{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.wave span{height:55%}}
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top">
-      <svg width="34" height="34" viewBox="0 0 200 200" aria-hidden="true">
-        <path d="M 141.4 58.6 A 58 58 0 1 1 58.6 141.4" fill="none" stroke="#FBF8F4" stroke-width="10.2" stroke-linecap="round"/>
-        <g fill="#F0932B">
-          <rect x="76" y="88" width="11.6" height="24" rx="5.8"/>
-          <rect x="93" y="77" width="11.6" height="46" rx="5.8"/>
-          <rect x="110" y="71" width="11.6" height="58" rx="5.8"/>
-          <rect x="127" y="82" width="11.6" height="36" rx="5.8"/>
-          <rect x="144" y="90" width="11.6" height="20" rx="5.8"/>
-        </g>
-      </svg>
-      <span>ALL<span class="ai">ai</span></span>
-    </a>
-    <a class="nav-cta" href="tel:+440000000000">Ring the demo</a>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#top">
+    <svg width="32" height="32" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M 141.4 58.6 A 58 58 0 1 1 58.6 141.4" fill="none" stroke="#FBF8F4" stroke-width="10.2" stroke-linecap="round"/>
+      <g fill="#F0932B"><rect x="76" y="88" width="11.6" height="24" rx="5.8"/><rect x="93" y="77" width="11.6" height="46" rx="5.8"/><rect x="110" y="71" width="11.6" height="58" rx="5.8"/><rect x="127" y="82" width="11.6" height="36" rx="5.8"/><rect x="144" y="90" width="11.6" height="20" rx="5.8"/></g>
+    </svg>
+    <span>ALL<span class="ai">ai</span></span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#demo">Try it</a>
+    <a class="nav-link" href="#how">How it works</a>
+    <a class="nav-link" href="#faq">Questions</a>
+    <a class="nav-call" href="tel:+447380327053">Ring the demo</a>
   </div>
-</nav>
+</div></nav>
 
-<header class="hero" id="top">
-  <div class="wrap">
-    <p class="eyebrow">Answered · every call · every hour</p>
+<header class="hero" id="top"><div class="wrap hero-grid">
+  <div>
+    <p class="eyebrow">Answered &middot; every call &middot; every hour</p>
     <h1>Your phone rings. <em>You're busy.</em> They ring someone else.</h1>
-    <p class="lede">ALLai answers your business line around the clock, talks to your customers like a person, and books the job straight into your calendar. Set up for you, end to end — you touch nothing.</p>
-
-    <div class="dial">
-      <p class="dial-label">Don't take my word for it</p>
-      <a class="dial-num" href="tel:+440000000000">0000 000 0000</a>
-      <div class="wave" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
-      <p class="dial-sub">Ring it and try to catch it out. Takes thirty seconds.</p>
+    <p class="lede">ALLai answers your business line around the clock, talks to your customers like a person, and books the job straight into your calendar. Set up for you, end to end &mdash; you touch nothing.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+447380327053">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>
+        Ring it now
+      </a>
+      <a class="btn btn-ghost" href="#demo">See it in action</a>
     </div>
+    <p class="cta-note">Thirty seconds. Try to catch it out.</p>
   </div>
-</header>
-
-<section class="band">
-  <div class="wrap">
-    <h2>Missed calls don't feel like anything. That's the problem.</h2>
-    <p>Nobody hands you an invoice for the call you didn't take. You're under a car, chairside, out on a viewing — and by the time you've wiped your hands, they've already rung the next name on Google. The work leaves quietly, and you never find out it was there.</p>
-
-    <div class="stat-row">
-      <div class="stat">
-        <b>47%</b>
-        <span>of first calls to UK small businesses go unanswered</span>
-      </div>
-      <div class="stat">
-        <b>85%</b>
-        <span>of those callers never try again</span>
-      </div>
-      <div class="stat">
-        <b>24/7</b>
-        <span>evenings, weekends and bank holidays, all covered</span>
-      </div>
-    </div>
-    <p class="src">Source: TelePA study of 142 UK SMEs, 2025.</p>
+  <div class="phone-card">
+    <p class="pc-label">Don't take my word for it</p>
+    <a class="pc-num" href="tel:+447380327053">07380 327053</a>
+    <div class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <button class="copy-btn" id="copyBtn" type="button">Copy number</button>
   </div>
-</section>
+</div></header>
 
-<section class="dark">
-  <div class="wrap">
-    <h2>How it works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-mark">01</div>
-        <h3>It answers</h3>
-        <p>Picks up within a couple of rings and holds a normal conversation. No menus, no hold music, no press-one-for-sales.</p>
-      </div>
-      <div class="step">
-        <div class="step-mark">02</div>
-        <h3>It books</h3>
-        <p>Checks your live diary, takes the details, answers the usual questions, and puts the appointment straight in.</p>
-      </div>
-      <div class="step">
-        <div class="step-mark">03</div>
-        <h3>You carry on</h3>
-        <p>You finish what you were doing. The booking is sitting there when you next look, with everything you need.</p>
-      </div>
-    </div>
+<section class="band"><div class="wrap">
+  <h2>Missed calls don't feel like anything. That's the problem.</h2>
+  <p>Nobody sends you an invoice for the call you didn't take. You're under a car, chairside, out on a viewing &mdash; and by the time you've wiped your hands, they've rung the next name on Google. The work leaves quietly, and you never find out it was there.</p>
+  <div class="stats">
+    <div class="stat"><b>47%</b><span>of first calls to UK small businesses go unanswered</span></div>
+    <div class="stat"><b>85%</b><span>of those callers never try again</span></div>
+    <div class="stat"><b>24/7</b><span>evenings, weekends and bank holidays, covered</span></div>
   </div>
-</section>
+  <p class="src">Source: TelePA study of 142 UK SMEs, 2025.</p>
+</div></section>
 
-<section class="who">
-  <div class="wrap">
-    <h2>Built for businesses that live on the phone</h2>
-    <div class="grid">
-      <div class="cell"><b>Garages &amp; MOT centres</b><span>Bookings while you're under a car</span></div>
-      <div class="cell"><b>Dental practices</b><span>Never miss a new patient enquiry</span></div>
-      <div class="cell"><b>Estate agents</b><span>Valuations captured while you're on a viewing</span></div>
-      <div class="cell"><b>Veterinary clinics</b><span>Worried owners get a calm answer</span></div>
-      <div class="cell"><b>Physiotherapy</b><span>Appointments booked while you're hands-on</span></div>
-      <div class="cell"><b>Private clinics</b><span>Consultations booked, questions answered</span></div>
-      <div class="cell"><b>Solicitors</b><span>Enquiries taken while you're in a meeting</span></div>
-      <div class="cell"><b>Accountants</b><span>New clients captured in busy season</span></div>
-    </div>
+<section class="demo" id="demo"><div class="wrap">
+  <p class="eyebrow">Live example</p>
+  <h2>Pick your trade. Watch it take the call.</h2>
+  <p class="sub">This is roughly how a call goes. Choose your line of work and it'll play out the way your customers would hear it.</p>
+  <div class="tabs" role="tablist" aria-label="Choose an industry">
+    <button class="tab" role="tab" aria-selected="true" data-k="garage">Garage</button>
+    <button class="tab" role="tab" aria-selected="false" data-k="dental">Dental</button>
+    <button class="tab" role="tab" aria-selected="false" data-k="estate">Estate agent</button>
+    <button class="tab" role="tab" aria-selected="false" data-k="vet">Vet</button>
+    <button class="tab" role="tab" aria-selected="false" data-k="physio">Physio</button>
+    <button class="tab" role="tab" aria-selected="false" data-k="legal">Solicitor</button>
   </div>
-</section>
-
-<section class="get" id="quote">
-  <div class="wrap get-inner">
-    <div>
-      <h2>Get a quote</h2>
-      <p style="color:var(--text-dim);max-width:46ch">Every setup is different, so the price depends on your business and how many calls you take. Tell me a little and I'll come back with a straight number — usually same day.</p>
-      <p style="color:var(--text-dim);max-width:46ch">Or skip the form and just ring the demo line above. Honestly, that tells you more than I can.</p>
-    </div>
-
-    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="company-website">
-      <input type="hidden" name="form-name" value="quote">
-      <p hidden><label>Leave this empty: <input name="company-website"></label></p>
-
-      <div>
-        <label for="name">Your name</label>
-        <input id="name" name="name" type="text" required autocomplete="name" placeholder="Dave Wilson">
-      </div>
-      <div>
-        <label for="business">Business name</label>
-        <input id="business" name="business" type="text" required placeholder="Oslo Court Garage">
-      </div>
-      <div>
-        <label for="type">What kind of business?</label>
-        <select id="type" name="type" required>
-          <option value="">Choose one…</option>
-          <option>Garage / MOT centre</option>
-          <option>Dental practice</option>
-          <option>Estate agency</option>
-          <option>Veterinary clinic</option>
-          <option>Physiotherapy</option>
-          <option>Private clinic</option>
-          <option>Solicitors</option>
-          <option>Accountants</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div>
-        <label for="phone">Best number to reach you</label>
-        <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="07700 900000">
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required autocomplete="email" placeholder="dave@oslocourtgarage.co.uk">
-      </div>
-      <div>
-        <label for="msg">Anything I should know? <span style="font-weight:400;color:var(--text-dim)">(optional)</span></label>
-        <textarea id="msg" name="message" rows="3" placeholder="Roughly how many calls a day, opening hours, anything unusual…"></textarea>
-      </div>
-      <button type="submit">Send it over</button>
-      <p class="note">I'll reply personally. No sales sequence, no chasing.</p>
-    </form>
+  <div class="convo" id="convo" aria-live="polite">
+    <div class="convo-head"><span class="dot" aria-hidden="true"></span><span id="convoLabel">Incoming call &middot; 7:42pm</span></div>
+    <div id="msgs"></div>
   </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© <span id="yr">2026</span> ALLai · United Kingdom</span>
-    <span><a href="tel:+440000000000">0000 000 0000</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+  <div class="replay cta-row">
+    <button class="btn btn-ghost" id="replayBtn" type="button">Play again</button>
+    <a class="btn btn-primary" href="tel:+447380327053">Ring the real thing</a>
   </div>
-</footer>
+</div></section>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<section id="how"><div class="wrap">
+  <p class="eyebrow">How it works</p>
+  <h2>Three things happen. None of them need you.</h2>
+  <div class="steps">
+    <div class="step"><div class="smark">01</div><h3>It answers</h3><p>Picks up within a couple of rings and holds a normal conversation. No menus, no hold music, no press-one-for-sales.</p></div>
+    <div class="step"><div class="smark">02</div><h3>It books</h3><p>Checks your live diary, takes the details, answers the usual questions, and puts the appointment straight in.</p></div>
+    <div class="step"><div class="smark">03</div><h3>You carry on</h3><p>You finish what you were doing. The booking is sitting there when you next look, with everything you need.</p></div>
+  </div>
+</div></section>
+
+<section style="background:var(--ink-2);border-top:1px solid var(--line)"><div class="wrap">
+  <p class="eyebrow">Who it's for</p>
+  <h2>Built for businesses that live on the phone</h2>
+  <div class="grid">
+    <div class="cell"><b>Garages &amp; MOT</b><span>Bookings while you're under a car</span></div>
+    <div class="cell"><b>Dental practices</b><span>Never miss a new patient enquiry</span></div>
+    <div class="cell"><b>Estate agents</b><span>Valuations captured on a viewing</span></div>
+    <div class="cell"><b>Veterinary</b><span>Worried owners get a calm answer</span></div>
+    <div class="cell"><b>Physiotherapy</b><span>Booked while you're hands-on</span></div>
+    <div class="cell"><b>Private clinics</b><span>Consultations booked, questions answered</span></div>
+    <div class="cell"><b>Solicitors</b><span>Enquiries taken while you're in court</span></div>
+    <div class="cell"><b>Accountants</b><span>New clients captured in busy season</span></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap faq">
+  <p class="eyebrow">Straight answers</p>
+  <h2>The questions everyone asks</h2>
+  <details open><summary>Will my customers know it's not a person?</summary>
+    <p>Most don't clock it, and the ones who do usually don't mind &mdash; they got an answer, which is the bit they actually cared about. It never pretends to be human if asked outright. Ring it yourself and see what you think; that's a better test than anything I can write here.</p></details>
+  <details><summary>What if it gets something wrong?</summary>
+    <p>It confirms names, numbers and times back to the caller before booking anything, and if the line's bad it asks them to repeat rather than guessing. Anything it genuinely can't handle, it takes a number and tells them you'll ring back.</p></details>
+  <details><summary>Do I have to change my phone number?</summary>
+    <p>No. You keep your number and forward it &mdash; either everything, or only when you're busy or don't pick up. Most people start with the second option, so nothing changes until a call would have been missed anyway.</p></details>
+  <details><summary>How much is it?</summary>
+    <p>It depends on your trade and how many calls you take, so I'd rather give you a straight number than a made-up one. Tell me a bit about your business below and you'll usually have a price the same day.</p></details>
+  <details><summary>How long does setup take?</summary>
+    <p>A day or two. I do all of it &mdash; your services, your prices, your opening hours, your calendar. You don't touch anything technical.</p></details>
+  <details><summary>What about my customers' data?</summary>
+    <p>Fair question, especially in healthcare or legal work. I'll put a written data processing agreement in place before going live, setting out what's processed, where it's stored and how long it's kept. There's more detail on the <a href="/privacy.html">privacy page</a>.</p></details>
+  <details><summary>What if I want to stop?</summary>
+    <p>You stop. Forward your number back to yourself and it's over. No tie-in, no exit fee.</p></details>
+</div></section>
+
+<section id="quote" style="background:var(--ink-2);border-top:1px solid var(--line)"><div class="wrap get-inner">
+  <div>
+    <p class="eyebrow">Get a quote</p>
+    <h2>Tell me about your business</h2>
+    <p class="sub">Every setup is different, so the price depends on your trade and your call volume. Tell me a little and I'll come back with a straight number &mdash; usually the same day.</p>
+    <p class="sub" style="margin-bottom:0">Or skip the form and just ring the number. Honestly, that tells you more than I can.</p>
+  </div>
+  <form name="quote" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company-website">
+    <input type="hidden" name="form-name" value="quote">
+    <p hidden><label>Leave empty: <input name="company-website"></label></p>
+    <div><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Dave Wilson"></div>
+    <div><label for="business">Business name</label><input id="business" name="business" type="text" required placeholder="Oslo Court Garage"></div>
+    <div><label for="type">What kind of business?</label>
+      <select id="type" name="type" required>
+        <option value="">Choose one&hellip;</option>
+        <option>Garage / MOT centre</option><option>Dental practice</option><option>Estate agency</option>
+        <option>Veterinary clinic</option><option>Physiotherapy</option><option>Private clinic</option>
+        <option>Solicitors</option><option>Accountants</option><option>Something else</option>
+      </select></div>
+    <div><label for="phone">Best number to reach you</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="07700 900000"></div>
+    <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="dave@oslocourtgarage.co.uk"></div>
+    <div><label for="msg">Anything I should know? <span style="font-weight:400;color:var(--dim-2)">(optional)</span></label>
+      <textarea id="msg" name="message" rows="3" placeholder="Roughly how many calls a day, opening hours, anything unusual&hellip;"></textarea></div>
+    <button class="btn btn-primary" type="submit" style="justify-self:start">Send it over</button>
+    <p class="note">I'll reply personally. No sales sequence, no chasing.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span>&copy; <span id="yr">2026</span> ALLai &middot; United Kingdom &middot; <a href="/privacy.html">Privacy</a></span>
+  <span><a href="tel:+447380327053">07380 327053</a> &middot; <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+</div></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var copyBtn = document.getElementById('copyBtn');
+copyBtn.addEventListener('click', function(){
+  navigator.clipboard.writeText('07380 327053').then(function(){
+    copyBtn.textContent = 'Copied';
+    setTimeout(function(){ copyBtn.textContent = 'Copy number'; }, 1800);
+  }).catch(function(){ copyBtn.textContent = '07380 327053'; });
+});
+var SCRIPTS = {
+  garage:{label:'Incoming call \u00b7 7:42pm',lines:[
+    ['c',"Hiya, is it too late to book an MOT?"],
+    ['a',"Not at all \u2014 we're closed now but I can book you in. What's the reg?"],
+    ['c',"It's a Fiat 500, sixty-eight plate."],
+    ['a',"Lovely. I've got Thursday morning at half nine, or Friday afternoon if that's easier?"],
+    ['c',"Thursday's good."],
+    ['a',"Perfect. Can I take a name and a number? ... Brilliant, that's you booked in for Thursday at half nine. An MOT's fifty-five pounds. Anything else?"]]},
+  dental:{label:'Incoming call \u00b7 8:15pm',lines:[
+    ['c',"Hi, I've chipped a tooth \u2014 can someone look at it?"],
+    ['a',"Oh no. Is it painful at the moment, or more the look of it?"],
+    ['c',"Not painful really, just sharp."],
+    ['a',"Okay, that's reassuring. I can get you in tomorrow at ten past two, or Thursday first thing. Which suits?"],
+    ['c',"Tomorrow please."],
+    ['a',"Done. Can I take your name and number? ... Lovely, you're booked for tomorrow at ten past two. If it starts hurting overnight, do ring back."]]},
+  estate:{label:'Incoming call \u00b7 Sunday, 11:20am',lines:[
+    ['c',"Morning \u2014 I'm thinking of selling and wanted a valuation."],
+    ['a',"Of course. Whereabouts is the property?"],
+    ['c',"Off Gloucester Road, three bed terrace."],
+    ['a',"Lovely area. Valuations are free \u2014 I could do Tuesday at six, or Saturday morning if weekends are easier?"],
+    ['c',"Saturday would be better."],
+    ['a',"Perfect. Can I take your name and best number? ... That's Saturday at half ten. Someone will confirm by text."]]},
+  vet:{label:'Incoming call \u00b7 9:05pm',lines:[
+    ['c',"My dog's been sick a few times tonight, I'm a bit worried."],
+    ['a',"I'm sorry to hear that. Is he still bright in himself, or is he very flat?"],
+    ['c',"Still wagging, just off his food."],
+    ['a',"That's a good sign. If he gets very lethargic or there's blood, ring the emergency line straight away. Otherwise shall I get him seen first thing?"],
+    ['c',"Yes please."],
+    ['a',"I've got half eight tomorrow. Can I take your name and number? ... Booked. Try to keep him off food overnight, water's fine."]]},
+  physio:{label:'Incoming call \u00b7 6:50pm',lines:[
+    ['c',"Hi, I've done my back in \u2014 do you have anything this week?"],
+    ['a',"Sorry to hear that. Is this a new injury, or a flare-up of something?"],
+    ['c',"New, lifting something on Saturday."],
+    ['a',"Right. An initial assessment's about an hour \u2014 I've got Wednesday at five, or Thursday lunchtime?"],
+    ['c',"Wednesday works."],
+    ['a',"Great. Name and number for me? ... That's Wednesday at five. Initial assessment's sixty pounds. See you then."]]},
+  legal:{label:'Incoming call \u00b7 7:30pm',lines:[
+    ['c',"Hello \u2014 I need a solicitor for a house purchase."],
+    ['a',"Of course. Have you had an offer accepted, or are you still looking?"],
+    ['c',"Offer accepted last week."],
+    ['a',"Congratulations. Conveyancing usually runs eight hundred to fifteen hundred plus disbursements. Shall I book you a call with one of the team?"],
+    ['c',"Yes, please."],
+    ['a',"I've got Tuesday at eleven. Can I take your name and number? ... Booked in. You'll get a confirmation email shortly."]]}
+};
+var msgs = document.getElementById('msgs');
+var convoLabel = document.getElementById('convoLabel');
+var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+var timers = [];
+function play(key){
+  timers.forEach(clearTimeout); timers = [];
+  msgs.innerHTML = '';
+  var s = SCRIPTS[key];
+  convoLabel.innerHTML = s.label;
+  s.lines.forEach(function(ln, i){
+    timers.push(setTimeout(function(){
+      var row = document.createElement('div');
+      row.className = 'msg ' + (ln[0] === 'a' ? 'alex' : 'cust');
+      var who = document.createElement('div');
+      who.className = 'who ' + ln[0];
+      who.textContent = ln[0] === 'a' ? 'AI' : 'YOU';
+      var bub = document.createElement('div');
+      bub.className = 'bubble';
+      bub.textContent = ln[1];
+      row.appendChild(who); row.appendChild(bub);
+      msgs.appendChild(row);
+    }, i * 900));
+  });
+}
+tabs.forEach(function(t){
+  t.addEventListener('click', function(){
+    tabs.forEach(function(x){ x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+    play(t.dataset.k);
+  });
+});
+document.getElementById('replayBtn').addEventListener('click', function(){
+  var active = tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0];
+  play(active.dataset.k);
+});
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if (e.isIntersecting){ play('garage'); io.disconnect(); } });
+}, { threshold: .25 });
+io.observe(document.getElementById('convo'));
+</script>
 </body>
 </html>
