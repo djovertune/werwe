@@ -162,8 +162,15 @@ input,select,textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px
   background:rgba(255,255,255,.04);color:var(--cream);font-family:var(--body);font-size:16px}
 input:focus,select:focus,textarea:focus{border-color:var(--amber);outline:none}
 input::placeholder,textarea::placeholder{color:#5C7488}
-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);
-  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;background-size:6px 6px;background-repeat:no-repeat}
+select{appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;background-size:6px 6px;background-repeat:no-repeat;
+  color-scheme:dark}
+/* the open dropdown list is drawn by the browser, so it needs explicit colours
+   or it renders as unreadable white-on-white */
+select option{background:#0E2436;color:#FBF8F4;padding:10px}
+select option:checked,select option:hover{background:#F0932B;color:#08151F}
+select:invalid,select option[value=""]{color:#5C7488}
 .note{font-size:13.4px;color:var(--dim-2);margin:2px 0 0}
 footer{border-top:1px solid var(--line);padding-block:32px;font-size:14.4px;color:var(--dim-2)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
