@@ -186,6 +186,31 @@ footer a:hover{text-decoration:underline}
   gtag('js', new Date());
   gtag('config', 'GT-WRCMPVNR');
   gtag('config', 'AW-18375831954');
+  gtag('config', 'AW-18291356764');
+</script>
+
+<script>
+  // Google Ads: report a conversion when someone taps the phone number.
+  // Navigation still happens even if the tag is blocked or slow - the
+  // 1.2s fallback guarantees the call is never prevented.
+  function gtag_report_conversion(url) {
+    var done = false;
+    var go = function () {
+      if (done) return;
+      done = true;
+      if (typeof url !== 'undefined') window.location = url;
+    };
+    try {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18291356764/9kPKCLONlt8cENzo_5FE',
+        'value': 1.0,
+        'currency': 'GBP',
+        'event_callback': go
+      });
+    } catch (e) { /* tag blocked - carry on regardless */ }
+    setTimeout(go, 1200);
+    return false;
+  }
 </script>
 </head>
 <body>
@@ -215,12 +240,12 @@ footer a:hover{text-decoration:underline}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
         Get a free Missed Call Audit
       </a>
-      <a class="btn btn-ghost" href="tel:+447380327053">Or ring the demo</a>
+      <a class="btn btn-ghost" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">Or ring the demo</a>
     </div>
     <p class="cta-note">I ring your place five times over a week. You find out how many got answered. No charge, nothing to sign.</p>
   <div class="phone-card">
     <p class="pc-label">Don't take my word for it</p>
-    <a class="pc-num" href="tel:+447380327053">07380 327053</a>
+    <a class="pc-num" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">07380 327053</a>
     <div class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <button class="copy-btn" id="copyBtn" type="button">Copy number</button>
   </div>
@@ -255,7 +280,7 @@ footer a:hover{text-decoration:underline}
   </div>
   <div class="replay cta-row">
     <button class="btn btn-ghost" id="replayBtn" type="button">Play again</button>
-    <a class="btn btn-primary" href="tel:+447380327053">Ring the real thing</a>
+    <a class="btn btn-primary" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">Ring the real thing</a>
   </div>
 </div></section>
 
@@ -323,7 +348,7 @@ footer a:hover{text-decoration:underline}
 
     <div class="cta-row" style="margin-top:38px">
       <a class="btn btn-primary" href="#quote">Book my free audit</a>
-      <a class="btn btn-ghost" href="tel:+447380327053">Hear the system first</a>
+      <a class="btn btn-ghost" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">Hear the system first</a>
     </div>
     <p class="cta-note" style="margin-top:14px">Takes me ten minutes. Costs you nothing. No obligation either way.</p>
   </div>
@@ -386,7 +411,7 @@ footer a:hover{text-decoration:underline}
 
 <footer><div class="wrap">
   <span>&copy; <span id="yr">2026</span> ALLai &middot; United Kingdom &middot; <a href="/privacy.html">Privacy</a></span>
-  <span><a href="tel:+447380327053">07380 327053</a> &middot; <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+  <span><a href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">07380 327053</a> &middot; <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
 </div></footer>
 
 <script>
