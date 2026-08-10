@@ -172,6 +172,31 @@ footer a:hover{text-decoration:underline}
   gtag('js', new Date());
   gtag('config', 'GT-WRCMPVNR');
   gtag('config', 'AW-18375831954');
+  gtag('config', 'AW-18291356764');
+</script>
+
+<script>
+  // Google Ads: report a conversion when someone taps the phone number.
+  // Navigation still happens even if the tag is blocked or slow - the
+  // 1.2s fallback guarantees the call is never prevented.
+  function gtag_report_conversion(url) {
+    var done = false;
+    var go = function () {
+      if (done) return;
+      done = true;
+      if (typeof url !== 'undefined') window.location = url;
+    };
+    try {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18291356764/9kPKCLONlt8cENzo_5FE',
+        'value': 1.0,
+        'currency': 'GBP',
+        'event_callback': go
+      });
+    } catch (e) { /* tag blocked - carry on regardless */ }
+    setTimeout(go, 1200);
+    return false;
+  }
 </script>
 </head>
 <body>
@@ -190,7 +215,7 @@ footer a:hover{text-decoration:underline}
       </svg>
       <span>ALL<span class="ai">ai</span></span>
     </a>
-    <a class="nav-cta" href="tel:+447380327053">Ring the demo</a>
+    <a class="nav-cta" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">Ring the demo</a>
   </div>
 </nav>
 <main class="wrap doc">
@@ -200,14 +225,14 @@ footer a:hover{text-decoration:underline}
 <p>I read every enquiry myself, and I'll come back to you with a straight price, usually the same day and always within one working day. No sequence of automated emails, no chasing.</p>
 <p>If you'd rather not wait, ring the demo line and hear the thing for yourself. It'll tell you more in thirty seconds than I can in an email.</p>
 <div class="cta-row" style="margin-top:32px">
-<a class="btn btn-primary" href="tel:+447380327053">Ring the demo — 07380 327053</a>
+<a class="btn btn-primary" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">Ring the demo — 07380 327053</a>
 <a class="btn btn-ghost" href="/">Back to the site</a>
 </div>
 </main>
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> ALLai · United Kingdom</span>
-    <span><a href="tel:+447380327053">07380 327053</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+    <span><a href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">07380 327053</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
   </div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
