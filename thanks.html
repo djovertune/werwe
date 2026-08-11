@@ -150,6 +150,12 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding-block:34px;font-size:1
 footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
 footer a{color:var(--signal);text-decoration:none}
 footer a:hover{text-decoration:underline}
+
+.crumbs{font-family:var(--mono);font-size:12.5px;color:var(--dim-2);margin:0 0 20px;
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.crumbs a{color:var(--dim);text-decoration:none}
+.crumbs a:hover{color:var(--signal)}
+.crumbs span[aria-current]{color:var(--signal)}
 </style>
 <style>
 .doc{max-width:760px;padding-block:clamp(46px,7vw,84px)}
@@ -196,6 +202,11 @@ footer a:hover{text-decoration:underline}
     return false;
   }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://allsai.net/"},
+ {"@type":"ListItem","position":2,"name":"Thank you","item":"https://allsai.net/thanks.html"}]}
+</script>
 </head>
 <body>
 <nav class="nav">
@@ -217,6 +228,9 @@ footer a:hover{text-decoration:underline}
   </div>
 </nav>
 <main class="wrap doc">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Thank you</span>
+</nav>
 <p class='eyebrow'>Enquiry received</p><h1>Got it.</h1>
 <p style="font-size:19px">Thanks — that's landed in my inbox.</p>
 <h2>What happens next</h2>
