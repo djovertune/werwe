@@ -175,6 +175,37 @@ footer a:hover{text-decoration:underline}
  {"@type":"ListItem","position":1,"name":"Home","item":"https://allsai.net/"},
  {"@type":"ListItem","position":2,"name":"Privacy","item":"https://allsai.net/privacy.html"}]}
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17392176551"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17392176551');
+</script>
+<script>
+  // Google Ads: report a conversion when someone taps the phone number.
+  // Navigation still happens even if the tag is blocked or slow - the
+  // 1.2s fallback guarantees the call is never prevented.
+  function gtag_report_conversion(url) {
+    var done = false;
+    var go = function () {
+      if (done) return;
+      done = true;
+      if (typeof url !== 'undefined') window.location = url;
+    };
+    try {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17392176551/REPLACE_WITH_LABEL_FROM_551_ACCOUNT',
+        'value': 1.0,
+        'currency': 'PLN',
+        'event_callback': go
+      });
+    } catch (e) { /* tag blocked - carry on regardless */ }
+    setTimeout(go, 1200);
+    return false;
+  }
+</script>
 </head>
 <body>
 <nav class="nav">
@@ -192,7 +223,7 @@ footer a:hover{text-decoration:underline}
       </svg>
       <span>ALL<span class="ai">ai</span></span>
     </a>
-    <a class="nav-cta" href="tel:+447380327053">Ring the demo</a>
+    <a class="nav-cta" href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">Ring the demo</a>
   </div>
 </nav>
 <main class="wrap doc">
@@ -245,7 +276,7 @@ footer a:hover{text-decoration:underline}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> ALLai · United Kingdom</span>
-    <span><a href="tel:+447380327053">07380 327053</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
+    <span><a href="tel:+447380327053" onclick="return gtag_report_conversion('tel:+447380327053');">07380 327053</a> · <a href="mailto:filip.lubas@allsai.net">filip.lubas@allsai.net</a></span>
   </div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
